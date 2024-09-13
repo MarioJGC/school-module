@@ -9,5 +9,6 @@
     <menuitem id="school_student_menu_act" name="Estudiantes" parent="school_menu_categ" action="school_student_action" sequence="2"/>
     <menuitem id="school_teacher_menu_act" name="Profesores" parent="school_menu_categ" action="school_teacher_action" sequence="3"/>
 
+
   </data>
 </odoo>
