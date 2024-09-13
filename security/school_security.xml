@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="module_category_school">
+        <field name="name">Escuela</field>
+        <field name="description">Administra las transacciones en la escuela.</field>
+        <field name="sequence">99</field>
+    </record>
+
+    <record id="group_school_filler" model="res.groups">
+        <field name="name">Escribe datos academicos en sistema de escuela</field>
+        <field name="category_id" ref="module_category_school"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>
