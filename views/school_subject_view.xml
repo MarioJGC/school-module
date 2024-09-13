@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <record id="school_subject_form_view" model="ir.ui.view">
+            <field name="name">school.subject.view.form</field>
+            <field name="model">school.subject</field>
+            <field name="arch" type="xml">
+                <form string="Asignatura">
+                    <sheet>
+                        <group>
+                            <group string="Información del Curso">
+                                <field name="name"/>
+                                <field name="credits"/>
+                            </group>
+                            <group string="Configuración">
+                                <field name="max_students"/>
+                                <field name="activate"/>
+                            </group>
+                        </group>
+                        <group string="Relaciones">
+                            <field name="student_ids" widget="many2many_tags"/>
+                            <field name="teacher_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="school_subject_tree_view" model="ir.ui.view">
+            <field name="name">school.subject.view.tree</field>
+            <field name="model">school.subject</field>
+            <field name="arch" type="xml">
+                <tree string="Listado de Cursos">
+                    <field name="name"/>
+                    <field name="credits"/>
+                    <field name="max_students"/>
+                    <field name="activate"/>
+                    <field name="student_ids" widget="many2many_tags" optional="show" />
+                    <field name="teacher_id" optional="hide" />
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Action -->
+        <record id="school_subject_action" model="ir.actions.act_window">
+            <field name="name">Cursos de escuela</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.subject</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create"> 
+                    Aun no hay cursos registrados en el sistema.
+                </p>
+                <p>
+                    Ingrese un nuevo curso en el sistema.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

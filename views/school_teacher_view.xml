@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record id="school_teacher_view_form" model="ir.ui.view">
+            <field name="name">school.teacher.view.form</field>
+            <field name="model">school.teacher</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="profile" />
+                        </group>
+                        <group>
+                            <field name="subject_ids" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="school_teacher_view_tree" model="ir.ui.view">
+            <field name="name">school.teacher.view.tree</field>
+            <field name="model">school.teacher</field>
+            <field name="arch" type="xml">
+                <tree string="Listado de profesores">
+                    <field name="name" />
+                    <field name="profile" />
+                    <field name="subject_ids" mode="tree" optional="show" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="school_teacher_action" model="ir.actions.act_window">
+            <field name="name">Profesores de escuela</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school.teacher</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Aun no hay profesores registrados en el sistema.
+                </p>
+                <p>
+                    Ingrese un nuevo profesor en el sistema.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>
