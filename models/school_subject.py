@@ -10,4 +10,4 @@ class SchoolSubject(models.Model):
     max_students = fields.Integer(string="Cantidad maxima de estudiantes")
     activate = fields.Boolean(string="Estado")
     student_ids = fields.Many2many('school.student',string="Estudiantes")
-    teacher_ids = fields.Many2one('school.teacher',string="Profesores")
+    teacher_id = fields.Many2one('school.teacher',string="Profesores")
